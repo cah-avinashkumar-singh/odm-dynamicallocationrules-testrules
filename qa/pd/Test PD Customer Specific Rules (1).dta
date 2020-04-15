@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Test PD Customer Specific Rules (1)</name>
+  <uuid>881a8e73-0835-4a75-8c7d-9de6273b4661</uuid>
+  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Global%20Allocation%20Customer%20Specific%20Rules%20Template1.dtt#c12ac837-3a00-4e3c-9a4a-e1736f8538c7</template>
+  <locale>en_US</locale>
+  <definition>
+<DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+  <Body>
+    <Properties>
+      <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+      <Property Name="Lock.ApplyLocking" Type="xs:boolean"><![CDATA[true]]></Property>
+    </Properties>
+    <Structure>
+      <ConditionDefinitions>
+        <ConditionDefinition Id="C10">
+          <ExpressionDefinition>
+            <Text><![CDATA[the class of trade of the customer is <an object>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C4">
+          <Properties>
+            <Property Name="Lock.EditCondExpr" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditPartitionValues" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditPartitions" Type="xs:boolean"><![CDATA[false]]></Property>
+          </Properties>
+          <ExpressionDefinition>
+            <Text><![CDATA[the sub class of trade of the customer is <an object>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C6">
+          <Properties>
+            <Property Name="Lock.EditCondExpr" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditPartitionValues" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditPartitions" Type="xs:boolean"><![CDATA[false]]></Property>
+          </Properties>
+          <ExpressionDefinition>
+            <Text><![CDATA[the customer specialty of the customer is <an object>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C9">
+          <ExpressionDefinition>
+            <Text><![CDATA[the first affiliation code of the customer is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C8">
+          <ExpressionDefinition>
+            <Text><![CDATA[the second affiliation code of the customer is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C7">
+          <ExpressionDefinition>
+            <Text><![CDATA[the third affiliation code of the customer is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C11">
+          <ExpressionDefinition>
+            <Text><![CDATA[the plant of the order line item  is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C12">
+          <ExpressionDefinition>
+            <Text><![CDATA[the account number of the customer  is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C0">
+          <ExpressionDefinition>
+            <Text><![CDATA[the material of the order line item is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C1">
+          <ExpressionDefinition>
+            <Text><![CDATA[the GSN of the order line item is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C2">
+          <ExpressionDefinition>
+            <Text><![CDATA[the GSN + packaging key of the order line item is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C3">
+          <ExpressionDefinition>
+            <Text><![CDATA[the customer type of the order line item is <a customer type>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C5">
+          <ExpressionDefinition>
+            <Text><![CDATA['Transaction Date' is on or after <a simple date>  and on or before <a simple date>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+      </ConditionDefinitions>
+      <ActionDefinitions>
+        <ActionDefinition Id="A2">
+          <ExpressionDefinition>
+            <Text><![CDATA[set the accrual level of the order line item to <an item level>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A4">
+          <ExpressionDefinition>
+            <Text><![CDATA[set the allowed quantity of the order line item to (maximum of <a number> % of the average monthly usage of <an item level> of the order line item and <a number> ) when quantity on hand between <a number> % and <a number> % of safety stock]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A6">
+          <ExpressionDefinition>
+            <Text><![CDATA[set the allowed quantity of the order line item to (maximum of <a number> % of the average monthly usage of <an item level> of the order line item and <a number> ) when quantity on hand between <a number> % and <a number> % of safety stock]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A7">
+          <ExpressionDefinition>
+            <Text><![CDATA[set the <an accrual period> allowed quantity of the order line item  to max of <a number> % of <an item level> level AMU and <a number>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A5">
+          <ExpressionDefinition>
+            <Text><![CDATA[set the priority of the order line item for this rule to <a com.cardinal.brms.dynamicallocation.dynamicdomain.Priority>]]></Text>
+            <PlaceHolder Position="0">
+              <DefaultValue><![CDATA[999999_LOW]]></DefaultValue>
+            </PlaceHolder>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A1">
+          <ExpressionDefinition>
+            <Text><![CDATA[add reason code <a string> with description <a string> to the order line item]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A0">
+          <ExpressionDefinition>
+            <Text><![CDATA[do nothing <a string>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+      </ActionDefinitions>
+    </Structure>
+    <Contents>
+      <Partition DefId="C10">
+        <Condition>
+          <Expression/>
+          <Partition DefId="C9">
+            <Condition>
+              <Expression>
+                <Param><![CDATA["7007000047"]]></Param>
+              </Expression>
+              <Partition DefId="C11">
+                <Condition>
+                  <Expression/>
+                  <Partition DefId="C12">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["2150162973"]]></Param>
+                      </Expression>
+                      <Partition DefId="C0">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["5017199"]]></Param>
+                          </Expression>
+                          <Partition DefId="C5">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[11/12/2019]]></Param>
+                                <Param><![CDATA[11/12/2020]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A2">
+                                  <Expression>
+                                    <Param><![CDATA[MATERIAL]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA[0]]></Param>
+                                    <Param><![CDATA[MATERIAL]]></Param>
+                                    <Param><![CDATA[0]]></Param>
+                                    <Param><![CDATA[NO_LIMIT]]></Param>
+                                    <Param><![CDATA[NO_LIMIT]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A6">
+                                  <Expression>
+                                    <Param><![CDATA[0]]></Param>
+                                    <Param><![CDATA[MATERIAL]]></Param>
+                                    <Param><![CDATA[0]]></Param>
+                                    <Param><![CDATA[NO_LIMIT]]></Param>
+                                    <Param><![CDATA[NO_LIMIT]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A7">
+                                  <Expression>
+                                    <Param><![CDATA[WEEKLY]]></Param>
+                                    <Param><![CDATA[200]]></Param>
+                                    <Param><![CDATA[MATERIAL]]></Param>
+                                    <Param><![CDATA[10]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression>
+                                    <Param><![CDATA["E2E0525"]]></Param>
+                                    <Param><![CDATA["E2E0525 Z100 Order CSOM MOQ with Short Ship and Return"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["PMOD2"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <Partition DefId="C11">
+            <Condition>
+              <Expression>
+                <Param><![CDATA["P016"]]></Param>
+              </Expression>
+              <Partition DefId="C12">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA["731295"]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A2">
+                      <Expression>
+                        <Param><![CDATA[MATERIAL]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A4">
+                      <Expression>
+                        <Param><![CDATA[0]]></Param>
+                        <Param><![CDATA[MATERIAL]]></Param>
+                        <Param><![CDATA[0]]></Param>
+                        <Param><![CDATA[NO_LIMIT]]></Param>
+                        <Param><![CDATA[NO_LIMIT]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A6">
+                      <Expression>
+                        <Param><![CDATA[0]]></Param>
+                        <Param><![CDATA[MATERIAL]]></Param>
+                        <Param><![CDATA[0]]></Param>
+                        <Param><![CDATA[NO_LIMIT]]></Param>
+                        <Param><![CDATA[NO_LIMIT]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A7">
+                      <Expression>
+                        <Param><![CDATA[WEEKLY]]></Param>
+                        <Param><![CDATA[100]]></Param>
+                        <Param><![CDATA[MATERIAL]]></Param>
+                        <Param><![CDATA[0]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A5">
+                      <Expression>
+                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["Kmart"]]></Param>
+                        <Param><![CDATA["Kmart 100% MATERIAL AMU or 0"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA["National Markets - OTC account"]]></Param>
+                      </Expression>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <Partition DefId="C11">
+            <Condition>
+              <Expression/>
+              <Partition DefId="C12">
+                <Condition>
+                  <Expression/>
+                  <ActionSet>
+                    <Action DefId="A2">
+                      <Expression/>
+                    </Action>
+                    <Action DefId="A4">
+                      <Expression/>
+                    </Action>
+                    <Action DefId="A6">
+                      <Expression/>
+                    </Action>
+                    <Action DefId="A7">
+                      <Expression/>
+                    </Action>
+                    <Action DefId="A5">
+                      <Expression/>
+                    </Action>
+                    <Action DefId="A1">
+                      <Expression/>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression/>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+      </Partition>
+    </Contents>
+  </Body>
+  <Resources DefaultLocale="en_US">
+    <ResourceSet Locale="en_US">
+      <Data Name="Definitions(A0)#HeaderText"><![CDATA[Requestor]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[31]]></Data>
+      <Data Name="Definitions(A1)#HeaderText"><![CDATA[Reason]]></Data>
+      <Data Name="Definitions(A1)#Width"><![CDATA[32]]></Data>
+      <Data Name="Definitions(A1)[0]#HeaderText"><![CDATA[Code]]></Data>
+      <Data Name="Definitions(A1)[1]#HeaderText"><![CDATA[Description]]></Data>
+      <Data Name="Definitions(A2)#HeaderText"><![CDATA[Accural Level]]></Data>
+      <Data Name="Definitions(A2)#Width"><![CDATA[52]]></Data>
+      <Data Name="Definitions(A4)#HeaderText"><![CDATA[Safety Stock # 1 ]]></Data>
+      <Data Name="Definitions(A4)#Width"><![CDATA[124]]></Data>
+      <Data Name="Definitions(A4)[0]#HeaderText"><![CDATA[% AMU]]></Data>
+      <Data Name="Definitions(A4)[1]#HeaderText"><![CDATA[Item Level]]></Data>
+      <Data Name="Definitions(A4)[2]#HeaderText"><![CDATA[Max Qty]]></Data>
+      <Data Name="Definitions(A4)[3]#HeaderText"><![CDATA[Safety Low Level]]></Data>
+      <Data Name="Definitions(A4)[4]#HeaderText"><![CDATA[Safety High Level]]></Data>
+      <Data Name="Definitions(A5)#HeaderText"><![CDATA[Priority]]></Data>
+      <Data Name="Definitions(A5)#Width"><![CDATA[33]]></Data>
+      <Data Name="Definitions(A6)#HeaderText"><![CDATA[Safety Stock # 2]]></Data>
+      <Data Name="Definitions(A6)#Width"><![CDATA[211]]></Data>
+      <Data Name="Definitions(A6)[0]#HeaderText"><![CDATA[% AMU]]></Data>
+      <Data Name="Definitions(A6)[1]#HeaderText"><![CDATA[Item Level]]></Data>
+      <Data Name="Definitions(A6)[2]#HeaderText"><![CDATA[Max Qty]]></Data>
+      <Data Name="Definitions(A6)[3]#HeaderText"><![CDATA[Safety Low Level]]></Data>
+      <Data Name="Definitions(A6)[4]#HeaderText"><![CDATA[Safety High Level]]></Data>
+      <Data Name="Definitions(A7)#HeaderText"><![CDATA[AllowedQuantity for AccuralPeriod]]></Data>
+      <Data Name="Definitions(A7)#Width"><![CDATA[36]]></Data>
+      <Data Name="Definitions(A7)[0]#HeaderText"><![CDATA[Accrual Period]]></Data>
+      <Data Name="Definitions(A7)[1]#HeaderText"><![CDATA[AMU %]]></Data>
+      <Data Name="Definitions(A7)[2]#HeaderText"><![CDATA[ItemLevel]]></Data>
+      <Data Name="Definitions(A7)[3]#HeaderText"><![CDATA[Max Value]]></Data>
+      <Data Name="Definitions(C0)#HeaderText"><![CDATA[Material]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[56]]></Data>
+      <Data Name="Definitions(C1)#HeaderText"><![CDATA[GSN]]></Data>
+      <Data Name="Definitions(C1)#Width"><![CDATA[55]]></Data>
+      <Data Name="Definitions(C10)#HeaderText"><![CDATA[Class of Trade]]></Data>
+      <Data Name="Definitions(C10)#Width"><![CDATA[60]]></Data>
+      <Data Name="Definitions(C11)#HeaderText"><![CDATA[Plant]]></Data>
+      <Data Name="Definitions(C11)#Width"><![CDATA[57]]></Data>
+      <Data Name="Definitions(C12)#HeaderText"><![CDATA[Account Number ]]></Data>
+      <Data Name="Definitions(C12)#Width"><![CDATA[59]]></Data>
+      <Data Name="Definitions(C2)#HeaderText"><![CDATA[GSN+Packaging Key]]></Data>
+      <Data Name="Definitions(C2)#Width"><![CDATA[56]]></Data>
+      <Data Name="Definitions(C3)#HeaderText"><![CDATA[Customer Type]]></Data>
+      <Data Name="Definitions(C3)#Width"><![CDATA[54]]></Data>
+      <Data Name="Definitions(C4)#HeaderText"><![CDATA[Sub Class of Trade]]></Data>
+      <Data Name="Definitions(C4)#Width"><![CDATA[60]]></Data>
+      <Data Name="Definitions(C5)#HeaderText"><![CDATA[Transaction Date]]></Data>
+      <Data Name="Definitions(C5)#Width"><![CDATA[54]]></Data>
+      <Data Name="Definitions(C5)[0]#HeaderText"><![CDATA[Start Date]]></Data>
+      <Data Name="Definitions(C5)[1]#HeaderText"><![CDATA[End Date]]></Data>
+      <Data Name="Definitions(C6)#HeaderText"><![CDATA[Customer Speciality]]></Data>
+      <Data Name="Definitions(C6)#Width"><![CDATA[60]]></Data>
+      <Data Name="Definitions(C7)#HeaderText"><![CDATA[Affiliation 3]]></Data>
+      <Data Name="Definitions(C7)#Width"><![CDATA[59]]></Data>
+      <Data Name="Definitions(C8)#HeaderText"><![CDATA[Affiliation 2]]></Data>
+      <Data Name="Definitions(C8)#Width"><![CDATA[59]]></Data>
+      <Data Name="Definitions(C9)#HeaderText"><![CDATA[Affiliation 1]]></Data>
+      <Data Name="Definitions(C9)#Width"><![CDATA[59]]></Data>
+    </ResourceSet>
+  </Resources>
+</DT></definition>
+  <status>deployed</status>
+</ilog.rules.studio.model.dt:DecisionTable>

@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Test PD Max Daily Limit Rules (3)</name>
+  <uuid>970d8e84-db30-4e76-b985-27b8b416f6bd</uuid>
+  <priority>1</priority>
+  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#aa6cf896-8a2a-4c8e-b49d-a91afbd5cd10</template>
+  <locale>en_US</locale>
+  <definition>
+<DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
+  <Body>
+    <Properties>
+      <Property Name="Lock.ApplyLocking" Type="xs:boolean"><![CDATA[true]]></Property>
+    </Properties>
+    <Structure>
+      <ConditionDefinitions>
+        <ConditionDefinition Id="C10">
+          <ExpressionDefinition>
+            <Text><![CDATA[the class of trade of the customer is <an object>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C4">
+          <Properties>
+            <Property Name="Lock.EditCondExpr" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditPartitionValues" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditPartitions" Type="xs:boolean"><![CDATA[false]]></Property>
+          </Properties>
+          <ExpressionDefinition>
+            <Text><![CDATA[the sub class of trade of the customer is <an object>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C6">
+          <Properties>
+            <Property Name="Lock.EditCondExpr" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditPartitionValues" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditPartitions" Type="xs:boolean"><![CDATA[false]]></Property>
+          </Properties>
+          <ExpressionDefinition>
+            <Text><![CDATA[the customer specialty of the customer is <an object>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C9">
+          <ExpressionDefinition>
+            <Text><![CDATA[the first affiliation code of the customer is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C8">
+          <ExpressionDefinition>
+            <Text><![CDATA[the second affiliation code of the customer is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C7">
+          <ExpressionDefinition>
+            <Text><![CDATA[the third affiliation code of the customer is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C11">
+          <ExpressionDefinition>
+            <Text><![CDATA[the plant of the order line item  is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C12">
+          <ExpressionDefinition>
+            <Text><![CDATA[the account number of the customer  is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C0">
+          <ExpressionDefinition>
+            <Text><![CDATA[the material of the order line item is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C1">
+          <ExpressionDefinition>
+            <Text><![CDATA[the GSN of the order line item is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C2">
+          <ExpressionDefinition>
+            <Text><![CDATA[the GSN + packaging key of the order line item is <a string>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C3">
+          <ExpressionDefinition>
+            <Text><![CDATA[the customer type of the order line item is <a customer type>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+        <ConditionDefinition Id="C5">
+          <ExpressionDefinition>
+            <Text><![CDATA['Transaction Date' is on or after <a simple date>  and on or before <a simple date>]]></Text>
+          </ExpressionDefinition>
+        </ConditionDefinition>
+      </ConditionDefinitions>
+      <ActionDefinitions>
+        <ActionDefinition Id="A5">
+          <Properties>
+            <Property Name="Lock.EditActionExpr" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditActionStatus" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditActionValues" Type="xs:boolean"><![CDATA[false]]></Property>
+          </Properties>
+          <ExpressionDefinition>
+            <Text><![CDATA[set the accrual level of the order line item  to <an item level>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A3">
+          <ExpressionDefinition>
+            <Text><![CDATA[set the daily limit of the order line item to <a number>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A2">
+          <Properties>
+            <Property Name="Lock.EditActionExpr" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditActionStatus" Type="xs:boolean"><![CDATA[false]]></Property>
+            <Property Name="Lock.EditActionValues" Type="xs:boolean"><![CDATA[false]]></Property>
+          </Properties>
+          <ExpressionDefinition>
+            <Text><![CDATA[set the allowed quantity of the order line item to <a number>]]></Text>
+            <PlaceHolder Position="0">
+              <DefaultValue><![CDATA[999999]]></DefaultValue>
+            </PlaceHolder>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A4">
+          <ExpressionDefinition>
+            <Text><![CDATA[set the priority of the order line item for this rule to <a com.cardinal.brms.dynamicallocation.dynamicdomain.Priority>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A1">
+          <ExpressionDefinition>
+            <Text><![CDATA[add reason code <a string> with description <a string> to the order line item]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+        <ActionDefinition Id="A0">
+          <ExpressionDefinition>
+            <Text><![CDATA[do nothing <a string>]]></Text>
+          </ExpressionDefinition>
+        </ActionDefinition>
+      </ActionDefinitions>
+    </Structure>
+    <Contents>
+      <Partition DefId="C10">
+        <Condition>
+          <Expression/>
+          <Partition DefId="C12">
+            <Condition>
+              <Expression>
+                <Param><![CDATA["2050070802"]]></Param>
+              </Expression>
+              <Partition DefId="C0">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA["2890598"]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A5">
+                      <Expression>
+                        <Param><![CDATA[MATERIAL]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A3">
+                      <Expression>
+                        <Param><![CDATA[50]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A2">
+                      <Expression/>
+                    </Action>
+                    <Action DefId="A4">
+                      <Expression>
+                        <Param><![CDATA[003_PRIORITY]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["Test Rule"]]></Param>
+                        <Param><![CDATA["Test- Set daily limit to 50"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA["Accrual Testing Comb 1"]]></Param>
+                      </Expression>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <Partition DefId="C12">
+            <Condition>
+              <Expression>
+                <Param><![CDATA["2050070802"]]></Param>
+              </Expression>
+              <Partition DefId="C0">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA["2900538"]]></Param>
+                  </Expression>
+                  <ActionSet>
+                    <Action DefId="A5">
+                      <Expression>
+                        <Param><![CDATA[MATERIAL]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A3">
+                      <Expression>
+                        <Param><![CDATA[60]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A2">
+                      <Expression/>
+                    </Action>
+                    <Action DefId="A4">
+                      <Expression>
+                        <Param><![CDATA[003_PRIORITY]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A1">
+                      <Expression>
+                        <Param><![CDATA["Test Rule"]]></Param>
+                        <Param><![CDATA["Test- Set daily limit to 60"]]></Param>
+                      </Expression>
+                    </Action>
+                    <Action DefId="A0">
+                      <Expression>
+                        <Param><![CDATA["Accrual Testing Comb 1"]]></Param>
+                      </Expression>
+                    </Action>
+                  </ActionSet>
+                </Condition>
+              </Partition>
+            </Condition>
+          </Partition>
+        </Condition>
+        <Condition>
+          <Expression/>
+          <ActionSet>
+            <Action DefId="A5">
+              <Expression/>
+            </Action>
+            <Action DefId="A3">
+              <Expression/>
+            </Action>
+            <Action DefId="A2">
+              <Expression/>
+            </Action>
+            <Action DefId="A4">
+              <Expression/>
+            </Action>
+            <Action DefId="A1">
+              <Expression/>
+            </Action>
+            <Action DefId="A0">
+              <Expression/>
+            </Action>
+          </ActionSet>
+        </Condition>
+      </Partition>
+    </Contents>
+  </Body>
+  <Resources DefaultLocale="en_US">
+    <ResourceSet Locale="en_US">
+      <Data Name="/0/0/0/A#Height"><![CDATA[19]]></Data>
+      <Data Name="Definitions(A0)#HeaderText"><![CDATA[Requestor]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[66]]></Data>
+      <Data Name="Definitions(A1)#HeaderText"><![CDATA[Reason]]></Data>
+      <Data Name="Definitions(A1)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(A1)[0]#HeaderText"><![CDATA[Code]]></Data>
+      <Data Name="Definitions(A1)[1]#HeaderText"><![CDATA[Description]]></Data>
+      <Data Name="Definitions(A2)#HeaderText"><![CDATA[Set Allowed Quantity (Must stay 999999)]]></Data>
+      <Data Name="Definitions(A2)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(A3)#HeaderText"><![CDATA[Set Daily Limit (Number)]]></Data>
+      <Data Name="Definitions(A3)#Width"><![CDATA[65]]></Data>
+      <Data Name="Definitions(A4)#HeaderText"><![CDATA[Priority]]></Data>
+      <Data Name="Definitions(A4)#Width"><![CDATA[68]]></Data>
+      <Data Name="Definitions(A5)#HeaderText"><![CDATA[Accrual Level]]></Data>
+      <Data Name="Definitions(A5)#Width"><![CDATA[71]]></Data>
+      <Data Name="Definitions(C0)#HeaderText"><![CDATA[Material]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C1)#HeaderText"><![CDATA[GSN]]></Data>
+      <Data Name="Definitions(C1)#Width"><![CDATA[66]]></Data>
+      <Data Name="Definitions(C10)#HeaderText"><![CDATA[Class of Trade]]></Data>
+      <Data Name="Definitions(C10)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C11)#HeaderText"><![CDATA[Plant]]></Data>
+      <Data Name="Definitions(C11)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C12)#HeaderText"><![CDATA[Account Number ]]></Data>
+      <Data Name="Definitions(C12)#Width"><![CDATA[65]]></Data>
+      <Data Name="Definitions(C2)#HeaderText"><![CDATA[GSN+Packaging Key]]></Data>
+      <Data Name="Definitions(C2)#Width"><![CDATA[66]]></Data>
+      <Data Name="Definitions(C3)#HeaderText"><![CDATA[Customer Type]]></Data>
+      <Data Name="Definitions(C3)#Width"><![CDATA[66]]></Data>
+      <Data Name="Definitions(C4)#HeaderText"><![CDATA[Sub Class of Trade]]></Data>
+      <Data Name="Definitions(C4)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C5)#HeaderText"><![CDATA[Transaction Date]]></Data>
+      <Data Name="Definitions(C5)#Width"><![CDATA[66]]></Data>
+      <Data Name="Definitions(C5)[0]#HeaderText"><![CDATA[Start Date]]></Data>
+      <Data Name="Definitions(C5)[1]#HeaderText"><![CDATA[End Date]]></Data>
+      <Data Name="Definitions(C6)#HeaderText"><![CDATA[Customer Speciality]]></Data>
+      <Data Name="Definitions(C6)#Width"><![CDATA[67]]></Data>
+      <Data Name="Definitions(C7)#HeaderText"><![CDATA[Affiliation 3]]></Data>
+      <Data Name="Definitions(C7)#Width"><![CDATA[66]]></Data>
+      <Data Name="Definitions(C8)#HeaderText"><![CDATA[Affiliation 2]]></Data>
+      <Data Name="Definitions(C8)#Width"><![CDATA[66]]></Data>
+      <Data Name="Definitions(C9)#HeaderText"><![CDATA[Affiliation 1]]></Data>
+      <Data Name="Definitions(C9)#Width"><![CDATA[67]]></Data>
+    </ResourceSet>
+  </Resources>
+</DT></definition>
+  <status>deployed</status>
+</ilog.rules.studio.model.dt:DecisionTable>
