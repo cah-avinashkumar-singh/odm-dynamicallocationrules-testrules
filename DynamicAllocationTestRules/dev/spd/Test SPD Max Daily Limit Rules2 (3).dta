@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
   <name>Test SPD Max Daily Limit Rules2 (3)</name>
-  <uuid>8c0d4632-5417-400c-9a83-86e9f27a7cd8</uuid>
+  <uuid>432c5bdf-5fe3-4da6-918a-bb63545c3d63</uuid>
   <priority>3</priority>
-  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#aee6c326-6dc6-4134-a532-eedc84a658c1</template>
+  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#736045de-3187-4976-ba43-91aef2a05a18</template>
   <locale>en_US</locale>
   <definition>
 <DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
@@ -135,7 +135,7 @@
                                 </Action>
                                 <Action DefId="A3">
                                   <Expression>
-                                    <Param><![CDATA[70]]></Param>
+                                    <Param><![CDATA[150]]></Param>
                                   </Expression>
                                 </Action>
                                 <Action DefId="A2">
@@ -151,7 +151,7 @@
                                 <Action DefId="A1">
                                   <Expression>
                                     <Param><![CDATA["Test Rule"]]></Param>
-                                    <Param><![CDATA["Test- Set daily limit to 70"]]></Param>
+                                    <Param><![CDATA["Test- Set daily limit to 150"]]></Param>
                                   </Expression>
                                 </Action>
                                 <Action DefId="A0">
@@ -194,7 +194,7 @@
                                 </Action>
                                 <Action DefId="A3">
                                   <Expression>
-                                    <Param><![CDATA[70]]></Param>
+                                    <Param><![CDATA[150]]></Param>
                                   </Expression>
                                 </Action>
                                 <Action DefId="A2">
@@ -210,7 +210,7 @@
                                 <Action DefId="A1">
                                   <Expression>
                                     <Param><![CDATA["Test Rule"]]></Param>
-                                    <Param><![CDATA["Test- Set daily limit to 70"]]></Param>
+                                    <Param><![CDATA["Test- Set daily limit to 150"]]></Param>
                                   </Expression>
                                 </Action>
                                 <Action DefId="A0">
@@ -253,7 +253,7 @@
                                 </Action>
                                 <Action DefId="A3">
                                   <Expression>
-                                    <Param><![CDATA[70]]></Param>
+                                    <Param><![CDATA[150]]></Param>
                                   </Expression>
                                 </Action>
                                 <Action DefId="A2">
@@ -269,7 +269,7 @@
                                 <Action DefId="A1">
                                   <Expression>
                                     <Param><![CDATA["Test Rule"]]></Param>
-                                    <Param><![CDATA["Test- Set daily limit to 70"]]></Param>
+                                    <Param><![CDATA["Test- Set daily limit to 150"]]></Param>
                                   </Expression>
                                 </Action>
                                 <Action DefId="A0">
@@ -439,7 +439,7 @@
                             </Action>
                             <Action DefId="A3">
                               <Expression>
-                                <Param><![CDATA[110]]></Param>
+                                <Param><![CDATA[150]]></Param>
                               </Expression>
                             </Action>
                             <Action DefId="A2">
@@ -455,7 +455,7 @@
                             <Action DefId="A1">
                               <Expression>
                                 <Param><![CDATA["Test Rule"]]></Param>
-                                <Param><![CDATA["Test- Set daily limit to 110"]]></Param>
+                                <Param><![CDATA["Test- Set daily limit to 150"]]></Param>
                               </Expression>
                             </Action>
                             <Action DefId="A0">
@@ -491,7 +491,7 @@
                             </Action>
                             <Action DefId="A3">
                               <Expression>
-                                <Param><![CDATA[110]]></Param>
+                                <Param><![CDATA[150]]></Param>
                               </Expression>
                             </Action>
                             <Action DefId="A2">
@@ -507,7 +507,7 @@
                             <Action DefId="A1">
                               <Expression>
                                 <Param><![CDATA["Test Rule"]]></Param>
-                                <Param><![CDATA["Test- Set daily limit to 110"]]></Param>
+                                <Param><![CDATA["Test- Set daily limit to 150"]]></Param>
                               </Expression>
                             </Action>
                             <Action DefId="A0">
@@ -543,7 +543,7 @@
                             </Action>
                             <Action DefId="A3">
                               <Expression>
-                                <Param><![CDATA[110]]></Param>
+                                <Param><![CDATA[150]]></Param>
                               </Expression>
                             </Action>
                             <Action DefId="A2">
@@ -559,7 +559,7 @@
                             <Action DefId="A1">
                               <Expression>
                                 <Param><![CDATA["Test Rule"]]></Param>
-                                <Param><![CDATA["Test- Set daily limit to 110"]]></Param>
+                                <Param><![CDATA["Test- Set daily limit to 150"]]></Param>
                               </Expression>
                             </Action>
                             <Action DefId="A0">
