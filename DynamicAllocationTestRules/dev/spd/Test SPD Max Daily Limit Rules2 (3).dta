@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
   <name>Test SPD Max Daily Limit Rules2 (3)</name>
-  <uuid>432c5bdf-5fe3-4da6-918a-bb63545c3d63</uuid>
+  <uuid>27afc00f-0263-43c2-aac8-2fb28976a98c</uuid>
   <priority>3</priority>
-  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#736045de-3187-4976-ba43-91aef2a05a18</template>
+  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#edd01b58-bb7c-4a57-b38b-fde009ccf967</template>
   <locale>en_US</locale>
   <definition>
 <DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
@@ -120,7 +120,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -179,7 +179,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -238,7 +238,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -304,7 +304,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -363,7 +363,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["2593"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -429,7 +429,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <ActionSet>
                             <Action DefId="A5">
@@ -481,7 +481,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <ActionSet>
                             <Action DefId="A5">
@@ -533,7 +533,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <ActionSet>
                             <Action DefId="A5">
@@ -599,7 +599,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <ActionSet>
                             <Action DefId="A5">
@@ -651,7 +651,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["3458"]]></Param>
+                            <Param><![CDATA["0000003458"]]></Param>
                           </Expression>
                           <ActionSet>
                             <Action DefId="A5">
@@ -703,7 +703,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["11014"]]></Param>
+                            <Param><![CDATA["0000011014"]]></Param>
                           </Expression>
                           <ActionSet>
                             <Action DefId="A5">

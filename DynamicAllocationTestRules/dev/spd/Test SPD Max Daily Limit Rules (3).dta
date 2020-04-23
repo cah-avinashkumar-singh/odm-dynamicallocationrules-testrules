@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
   <name>Test SPD Max Daily Limit Rules (3)</name>
-  <uuid>4e4374fe-4ed2-48f3-b0a6-c1022379bdae</uuid>
+  <uuid>090e035e-8951-4151-8249-57b7c681cfe0</uuid>
   <priority>3</priority>
-  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#ad66bd3b-bd1d-4b5f-a39e-b9dbe75fab42</template>
+  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#1507b7a3-3a21-4d9d-8c86-7df49fae00a1</template>
   <locale>en_US</locale>
   <definition>
 <DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
@@ -116,7 +116,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -187,7 +187,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -258,7 +258,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -329,7 +329,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -400,7 +400,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -471,7 +471,7 @@
                       <Partition DefId="C2">
                         <Condition>
                           <Expression>
-                            <Param><![CDATA["90163"]]></Param>
+                            <Param><![CDATA["0000090163"]]></Param>
                           </Expression>
                           <Partition DefId="C3">
                             <Condition>
@@ -617,86 +617,215 @@
           </Partition>
         </Condition>
         <Condition>
-          <Expression/>
-          <Partition DefId="C0">
+          <Expression>
+            <Param><![CDATA["P080"]]></Param>
+          </Expression>
+          <Partition DefId="C12">
             <Condition>
-              <Expression/>
-              <ActionSet>
-                <Action DefId="A5">
-                  <Expression/>
-                </Action>
-                <Action DefId="A3">
-                  <Expression/>
-                </Action>
-                <Action DefId="A2">
-                  <Expression/>
-                </Action>
-                <Action DefId="A4">
-                  <Expression/>
-                </Action>
-                <Action DefId="A1">
-                  <Expression/>
-                </Action>
-                <Action DefId="A0">
-                  <Expression/>
-                </Action>
-              </ActionSet>
+              <Expression>
+                <Param><![CDATA["2050070601"]]></Param>
+              </Expression>
+              <Partition DefId="C0">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA["5343504"]]></Param>
+                  </Expression>
+                  <Partition DefId="C1">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["ANTIHEMOPH F VIII PLAS/ALB FR"]]></Param>
+                      </Expression>
+                      <Partition DefId="C2">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["0000090163"]]></Param>
+                          </Expression>
+                          <Partition DefId="C3">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[1,974]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA[SUPPLIER_GENERIC_NAME_TAI]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression>
+                                    <Param><![CDATA[150]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA[003_PRIORITY]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression>
+                                    <Param><![CDATA["Test Rule"]]></Param>
+                                    <Param><![CDATA["Test- Set daily limit to 150"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["Accrual Testing Comb 9"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
             </Condition>
           </Partition>
         </Condition>
         <Condition>
-          <Expression/>
-          <Partition DefId="C0">
+          <Expression>
+            <Param><![CDATA["P080"]]></Param>
+          </Expression>
+          <Partition DefId="C12">
             <Condition>
-              <Expression/>
-              <ActionSet>
-                <Action DefId="A5">
-                  <Expression/>
-                </Action>
-                <Action DefId="A3">
-                  <Expression/>
-                </Action>
-                <Action DefId="A2">
-                  <Expression/>
-                </Action>
-                <Action DefId="A4">
-                  <Expression/>
-                </Action>
-                <Action DefId="A1">
-                  <Expression/>
-                </Action>
-                <Action DefId="A0">
-                  <Expression/>
-                </Action>
-              </ActionSet>
+              <Expression>
+                <Param><![CDATA["2050070601"]]></Param>
+              </Expression>
+              <Partition DefId="C0">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA["5343511"]]></Param>
+                  </Expression>
+                  <Partition DefId="C1">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["ANTIHEMOPH F VIII PLAS/ALB FR"]]></Param>
+                      </Expression>
+                      <Partition DefId="C2">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["0000090163"]]></Param>
+                          </Expression>
+                          <Partition DefId="C3">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[1,974]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA[SUPPLIER_GENERIC_NAME_TAI]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression>
+                                    <Param><![CDATA[150]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA[003_PRIORITY]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression>
+                                    <Param><![CDATA["Test Rule"]]></Param>
+                                    <Param><![CDATA["Test- Set daily limit to 150"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["Accrual Testing Comb 9"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
             </Condition>
           </Partition>
         </Condition>
         <Condition>
-          <Expression/>
-          <Partition DefId="C0">
+          <Expression>
+            <Param><![CDATA["P080"]]></Param>
+          </Expression>
+          <Partition DefId="C12">
             <Condition>
-              <Expression/>
-              <ActionSet>
-                <Action DefId="A5">
-                  <Expression/>
-                </Action>
-                <Action DefId="A3">
-                  <Expression/>
-                </Action>
-                <Action DefId="A2">
-                  <Expression/>
-                </Action>
-                <Action DefId="A4">
-                  <Expression/>
-                </Action>
-                <Action DefId="A1">
-                  <Expression/>
-                </Action>
-                <Action DefId="A0">
-                  <Expression/>
-                </Action>
-              </ActionSet>
+              <Expression>
+                <Param><![CDATA["2050070601"]]></Param>
+              </Expression>
+              <Partition DefId="C0">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA["5343512"]]></Param>
+                  </Expression>
+                  <Partition DefId="C1">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["ANTIHEMOPH F VIII PLAS/ALB FR"]]></Param>
+                      </Expression>
+                      <Partition DefId="C2">
+                        <Condition>
+                          <Expression>
+                            <Param><![CDATA["0000090163"]]></Param>
+                          </Expression>
+                          <Partition DefId="C3">
+                            <Condition>
+                              <Expression>
+                                <Param><![CDATA[1,974]]></Param>
+                              </Expression>
+                              <ActionSet>
+                                <Action DefId="A5">
+                                  <Expression>
+                                    <Param><![CDATA[SUPPLIER_GENERIC_NAME_TAI]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A3">
+                                  <Expression>
+                                    <Param><![CDATA[150]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A2">
+                                  <Expression/>
+                                </Action>
+                                <Action DefId="A4">
+                                  <Expression>
+                                    <Param><![CDATA[003_PRIORITY]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A1">
+                                  <Expression>
+                                    <Param><![CDATA["Test Rule"]]></Param>
+                                    <Param><![CDATA["Test- Set daily limit to 150"]]></Param>
+                                  </Expression>
+                                </Action>
+                                <Action DefId="A0">
+                                  <Expression>
+                                    <Param><![CDATA["Accrual Testing Comb 9"]]></Param>
+                                  </Expression>
+                                </Action>
+                              </ActionSet>
+                            </Condition>
+                          </Partition>
+                        </Condition>
+                      </Partition>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
             </Condition>
           </Partition>
         </Condition>
