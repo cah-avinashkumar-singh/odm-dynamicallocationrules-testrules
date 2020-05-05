@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
   <name>Test SPD Max Daily Limit Rules (3)</name>
-  <uuid>090e035e-8951-4151-8249-57b7c681cfe0</uuid>
+  <uuid>0099e65a-dbbe-47b3-a850-49cf678cd37e</uuid>
   <priority>3</priority>
-  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#1507b7a3-3a21-4d9d-8c86-7df49fae00a1</template>
+  <status>deployed</status>
   <locale>en_US</locale>
-  <definition>
-<DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
-  <Body>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
+    <Body>
     <Properties>
       <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
       <Property Name="Check.Overlap" Type="xs:boolean"><![CDATA[false]]></Property>
@@ -5948,7 +5947,7 @@
       </Partition>
     </Contents>
   </Body>
-  <Resources DefaultLocale="en_US">
+    <Resources DefaultLocale="en_US">
     <ResourceSet Locale="en_US">
       <Data Name="Definitions(A0)#HeaderText"><![CDATA[Requestor]]></Data>
       <Data Name="Definitions(A0)#Width"><![CDATA[94]]></Data>
@@ -5979,5 +5978,4 @@
     </ResourceSet>
   </Resources>
 </DT></definition>
-  <status>deployed</status>
 </ilog.rules.studio.model.dt:DecisionTable>
