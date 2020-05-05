@@ -1,13 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
   <name>Test PD Max Daily Limit Rules (3)</name>
-  <uuid>6c43dd60-fc33-4545-b576-a5033167e079</uuid>
+  <uuid>b8ece3d5-6ced-4655-b971-ffe63e7c4f70</uuid>
   <priority>1</priority>
-  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#272dbdca-cfaa-497f-a075-b8a7030a0edd</template>
+  <status>deployed</status>
   <locale>en_US</locale>
-  <definition>
-<DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
-  <Body>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
+    <Body>
     <Properties>
       <Property Name="Lock.ApplyLocking" Type="xs:boolean"><![CDATA[true]]></Property>
       <Property Name="edit.Check.Expression" Type="xs:boolean"><![CDATA[true]]></Property>
@@ -255,7 +254,7 @@
       </Partition>
     </Contents>
   </Body>
-  <Resources DefaultLocale="en_US">
+    <Resources DefaultLocale="en_US">
     <ResourceSet Locale="en_US">
       <Data Name="/0/0/0/0/0/A#Height"><![CDATA[19]]></Data>
       <Data Name="Definitions(A0)#HeaderText"><![CDATA[Requestor]]></Data>
@@ -301,5 +300,4 @@
     </ResourceSet>
   </Resources>
 </DT></definition>
-  <status>deployed</status>
 </ilog.rules.studio.model.dt:DecisionTable>

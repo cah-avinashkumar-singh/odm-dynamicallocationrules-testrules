@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
   <name>Test PD Customer Specific Rules (1)</name>
-  <uuid>1aaf3dfa-bdd6-4157-acea-276aca9c8212</uuid>
-  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Global%20Allocation%20Customer%20Specific%20Rules%20Template1.dtt#2c5636b7-5ae4-440a-8643-75288e2f99a4</template>
+  <uuid>406ba0cb-2cd6-4e4c-97e4-d7680653c191</uuid>
+  <status>deployed</status>
   <locale>en_US</locale>
-  <definition>
-<DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
-  <Body>
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
+    <Body>
     <Properties>
       <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
       <Property Name="Lock.ApplyLocking" Type="xs:boolean"><![CDATA[true]]></Property>
@@ -371,7 +370,7 @@
       </Partition>
     </Contents>
   </Body>
-  <Resources DefaultLocale="en_US">
+    <Resources DefaultLocale="en_US">
     <ResourceSet Locale="en_US">
       <Data Name="Definitions(A0)#HeaderText"><![CDATA[Requestor]]></Data>
       <Data Name="Definitions(A0)#Width"><![CDATA[35]]></Data>
@@ -434,5 +433,4 @@
     </ResourceSet>
   </Resources>
 </DT></definition>
-  <status>deployed</status>
 </ilog.rules.studio.model.dt:DecisionTable>
