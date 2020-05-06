@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.brl:ActionRule xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.brl="http://ilog.rules.studio/model/brl.ecore">
+  <name>Test PD Greensboro Hurricane Rule</name>
+  <uuid>3d2726c2-2588-4995-9c63-d6aeed9ae1c2</uuid>
+  <locale>en_US</locale>
+  <definition><![CDATA[if
+all of the following conditions are true : 
+	    - the plant of the order line item is "P026" 
+		- the account number of the customer is "2057213190" 
+        - the order line item classified as "Global Allocation Items"
+        - any of the following conditions is true : 
+        	-(the class of trade of the customer is 01_HOSPITAL 
+        	   and the sub class of trade of the customer is one of {0E_MAIL ORDER, 0J_PHYSICIAN OFFICE, 0U_PHCY INPATIENT, 1B_PHCY OUTPATIENT, 1F_CLOSED DOOR PHCY, 1I_LONG TERM CR,
+					1K_DME_MED SUPPLIES, 1L_SKILLED NURSING})
+		    -(the class of trade of the customer is 11_ALT CARE 
+		       and the sub class of trade of the customer is one of {0T_HMO_PPO, 1G_HOME INFUSION, 1I_LONG TERM CR, 0J_PHYSICIAN OFFICE, 0R_CLINIC,1K_DME_MED SUPPLIES}),,     
+then
+     set the allowed quantity of the order line item to maximum of 200% of the average monthly usage of GSN of the order line item and 200  ;
+     add reason code "Hurricane" with description "Hurricane - Allow 200% GCN AMU or 200" to the order line item ; 
+     set the priority of the order line item for this rule to 001_OVERRIDE_ALL ;  ]]></definition>
+  <status>deployed</status>
+</ilog.rules.studio.model.brl:ActionRule>
