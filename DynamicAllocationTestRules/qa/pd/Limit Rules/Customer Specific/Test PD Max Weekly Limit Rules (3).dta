@@ -4,9 +4,9 @@
     <details key="Group" value="DA_ADMIN"/>
   </eAnnotations>
   <name>Test PD Max Weekly Limit Rules (3)</name>
-  <uuid>c368907d-32bc-4856-a88f-de5b70b631a2</uuid>
+  <uuid>6563e81a-c8b2-433e-af61-fa37aef96e00</uuid>
   <priority>5</priority>
-  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#651ddaad-bcf2-41ba-8a45-66a7d75d898f</template>
+  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#897996e1-2f31-41fb-81ef-a60180e2556e</template>
   <locale>en_US</locale>
   <definition>
 <DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">

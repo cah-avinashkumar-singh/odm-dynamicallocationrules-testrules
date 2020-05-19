@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
   <name>Test PD Max Daily Limit Rules (3)</name>
-  <uuid>b8ece3d5-6ced-4655-b971-ffe63e7c4f70</uuid>
+  <uuid>2866d2a4-ab70-4f89-9fdc-577a2c776e22</uuid>
   <priority>1</priority>
   <locale>en_US</locale>
   <definition>
