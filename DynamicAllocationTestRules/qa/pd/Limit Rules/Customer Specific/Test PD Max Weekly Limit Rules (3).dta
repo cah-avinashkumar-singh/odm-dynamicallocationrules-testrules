@@ -1,23 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
-  <name>Test PD Max Daily Limit Rules (3)</name>
-  <uuid>b8ece3d5-6ced-4655-b971-ffe63e7c4f70</uuid>
-  <priority>1</priority>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <eAnnotations source="ilog.rules.custom_properties">
+    <details key="Group" value="DA_ADMIN"/>
+  </eAnnotations>
+  <name>Test PD Max Weekly Limit Rules (3)</name>
+  <uuid>c368907d-32bc-4856-a88f-de5b70b631a2</uuid>
+  <priority>5</priority>
+  <template xsi:type="ilog.rules.studio.model.dt:DecisionTableTemplate">../../../../../templates/IM%20Max%20Limit%20Per%20Day%20Template.dtt#651ddaad-bcf2-41ba-8a45-66a7d75d898f</template>
   <locale>en_US</locale>
   <definition>
 <DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable" Version="7.0">
   <Body>
     <Properties>
       <Property Name="Lock.ApplyLocking" Type="xs:boolean"><![CDATA[true]]></Property>
-      <Property Name="edit.Check.Expression" Type="xs:boolean"><![CDATA[true]]></Property>
-      <Property Name="edit.Check.Gap" Type="xs:boolean"><![CDATA[true]]></Property>
-      <Property Name="edit.Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
-      <Property Name="edit.Check.Symmetry" Type="xs:boolean"><![CDATA[false]]></Property>
-      <Property Name="tmpCheck.edit.Check.Expression" Type="xs:boolean"><![CDATA[true]]></Property>
-      <Property Name="tmpCheck.edit.Check.Gap" Type="xs:boolean"><![CDATA[true]]></Property>
-      <Property Name="tmpCheck.edit.Check.Overlap" Type="xs:boolean"><![CDATA[true]]></Property>
-      <Property Name="tmpCheck.edit.Check.Symmetry" Type="xs:boolean"><![CDATA[false]]></Property>
-      <Property Name="tmplock.Lock.ApplyLocking" Type="xs:boolean"><![CDATA[true]]></Property>
     </Properties>
     <Structure>
       <ConditionDefinitions>
@@ -31,9 +26,6 @@
             <Property Name="Lock.EditCondExpr" Type="xs:boolean"><![CDATA[false]]></Property>
             <Property Name="Lock.EditPartitionValues" Type="xs:boolean"><![CDATA[false]]></Property>
             <Property Name="Lock.EditPartitions" Type="xs:boolean"><![CDATA[false]]></Property>
-            <Property Name="tmplock.Lock.EditCondExpr" Type="xs:boolean"><![CDATA[false]]></Property>
-            <Property Name="tmplock.Lock.EditPartitionValues" Type="xs:boolean"><![CDATA[false]]></Property>
-            <Property Name="tmplock.Lock.EditPartitions" Type="xs:boolean"><![CDATA[false]]></Property>
           </Properties>
           <ExpressionDefinition>
             <Text><![CDATA[the sub class of trade of the customer is <an object>]]></Text>
@@ -44,12 +36,9 @@
             <Property Name="Lock.EditCondExpr" Type="xs:boolean"><![CDATA[false]]></Property>
             <Property Name="Lock.EditPartitionValues" Type="xs:boolean"><![CDATA[false]]></Property>
             <Property Name="Lock.EditPartitions" Type="xs:boolean"><![CDATA[false]]></Property>
-            <Property Name="tmplock.Lock.EditCondExpr" Type="xs:boolean"><![CDATA[false]]></Property>
-            <Property Name="tmplock.Lock.EditPartitionValues" Type="xs:boolean"><![CDATA[false]]></Property>
-            <Property Name="tmplock.Lock.EditPartitions" Type="xs:boolean"><![CDATA[false]]></Property>
           </Properties>
           <ExpressionDefinition>
-            <Text><![CDATA[the customer specialty of the customer is <an object>]]></Text>
+            <Text><![CDATA[the customer specialty of the customer  is <an object>]]></Text>
           </ExpressionDefinition>
         </ConditionDefinition>
         <ConditionDefinition Id="C9">
@@ -106,7 +95,7 @@
       <ActionDefinitions>
         <ActionDefinition Id="A3">
           <ExpressionDefinition>
-            <Text><![CDATA[set the daily limit of the order line item to <a number>]]></Text>
+            <Text><![CDATA[set the weekly limit of the order line item to <a number>]]></Text>
           </ExpressionDefinition>
         </ActionDefinition>
         <ActionDefinition Id="A2">
@@ -114,9 +103,6 @@
             <Property Name="Lock.EditActionExpr" Type="xs:boolean"><![CDATA[false]]></Property>
             <Property Name="Lock.EditActionStatus" Type="xs:boolean"><![CDATA[false]]></Property>
             <Property Name="Lock.EditActionValues" Type="xs:boolean"><![CDATA[false]]></Property>
-            <Property Name="tmplock.Lock.EditActionExpr" Type="xs:boolean"><![CDATA[false]]></Property>
-            <Property Name="tmplock.Lock.EditActionStatus" Type="xs:boolean"><![CDATA[false]]></Property>
-            <Property Name="tmplock.Lock.EditActionValues" Type="xs:boolean"><![CDATA[false]]></Property>
           </Properties>
           <ExpressionDefinition>
             <Text><![CDATA[set the allowed quantity of the order line item to <a number>]]></Text>
@@ -146,49 +132,52 @@
       <Partition DefId="C10">
         <Condition>
           <Expression/>
-          <Partition DefId="C9">
+          <Partition DefId="C11">
             <Condition>
               <Expression>
-                <Param><![CDATA["7007000047"]]></Param>
+                <Param><![CDATA["P003"]]></Param>
               </Expression>
               <Partition DefId="C12">
                 <Condition>
                   <Expression>
-                    <Param><![CDATA["2052300003"]]></Param>
+                    <Param><![CDATA["2057219270"]]></Param>
                   </Expression>
                   <Partition DefId="C0">
                     <Condition>
                       <Expression>
-                        <Param><![CDATA["5219654"]]></Param>
+                        <Param><![CDATA["5357694"]]></Param>
                       </Expression>
                       <Partition DefId="C5">
                         <Condition>
-                          <Expression/>
+                          <Expression>
+                            <Param><![CDATA[4/1/2020]]></Param>
+                            <Param><![CDATA[6/1/2021]]></Param>
+                          </Expression>
                           <ActionSet>
                             <Action DefId="A3">
                               <Expression>
-                                <Param><![CDATA[1]]></Param>
+                                <Param><![CDATA[5]]></Param>
                               </Expression>
                             </Action>
                             <Action DefId="A2">
                               <Expression>
-                                <Param><![CDATA[999999]]></Param>
+                                <Param><![CDATA[999,999]]></Param>
                               </Expression>
                             </Action>
                             <Action DefId="A4">
                               <Expression>
-                                <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                <Param><![CDATA[003_PRIORITY]]></Param>
                               </Expression>
                             </Action>
                             <Action DefId="A1">
                               <Expression>
                                 <Param><![CDATA["CustSpec"]]></Param>
-                                <Param><![CDATA["TEST E2E0524 1 Per Day"]]></Param>
+                                <Param><![CDATA["Limit 5 per week"]]></Param>
                               </Expression>
                             </Action>
                             <Action DefId="A0">
                               <Expression>
-                                <Param><![CDATA["PMOD2"]]></Param>
+                                <Param><![CDATA["Regional Field Director"]]></Param>
                               </Expression>
                             </Action>
                           </ActionSet>
@@ -196,101 +185,6 @@
                       </Partition>
                     </Condition>
                   </Partition>
-                </Condition>
-              </Partition>
-            </Condition>
-          </Partition>
-        </Condition>
-        <Condition>
-          <Expression/>
-          <Partition DefId="C9">
-            <Condition>
-              <Expression>
-                <Param><![CDATA["7007018186"]]></Param>
-              </Expression>
-              <Partition DefId="C0">
-                <Condition>
-                  <Expression>
-                    <Param><![CDATA["5014600"]]></Param>
-                  </Expression>
-                  <Partition DefId="C5">
-                    <Condition>
-                      <Expression/>
-                      <ActionSet>
-                        <Action DefId="A3">
-                          <Expression>
-                            <Param><![CDATA[1]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A2">
-                          <Expression>
-                            <Param><![CDATA[999999]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A4">
-                          <Expression>
-                            <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A1">
-                          <Expression>
-                            <Param><![CDATA["CustSpec"]]></Param>
-                            <Param><![CDATA["TEST E2E0524 1 Per Day"]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A0">
-                          <Expression>
-                            <Param><![CDATA["PMOD2"]]></Param>
-                          </Expression>
-                        </Action>
-                      </ActionSet>
-                    </Condition>
-                  </Partition>
-                </Condition>
-              </Partition>
-            </Condition>
-          </Partition>
-        </Condition>
-        <Condition>
-          <Expression/>
-          <Partition DefId="C12">
-            <Condition>
-              <Expression>
-                <Param><![CDATA["2057219270"]]></Param>
-              </Expression>
-              <Partition DefId="C0">
-                <Condition>
-                  <Expression>
-                    <Param><![CDATA["5503305"]]></Param>
-                  </Expression>
-                  <ActionSet>
-                    <Action DefId="A3">
-                      <Expression>
-                        <Param><![CDATA[2]]></Param>
-                      </Expression>
-                    </Action>
-                    <Action DefId="A2">
-                      <Expression>
-                        <Param><![CDATA[999999]]></Param>
-                      </Expression>
-                    </Action>
-                    <Action DefId="A4">
-                      <Expression>
-                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
-                      </Expression>
-                    </Action>
-                    <Action DefId="A1">
-                      <Expression>
-                        <Param><![CDATA["CustSpec"]]></Param>
-                        <Param><![CDATA["TEST E2E0524 1 Per Day"]]></Param>
-                      </Expression>
-                    </Action>
-                    <Action DefId="A0">
-                      <Expression>
-                        <Param><![CDATA["PMOD2"]]></Param>
-                      </Expression>
-                    </Action>
-                  </ActionSet>
                 </Condition>
               </Partition>
             </Condition>
@@ -306,36 +200,44 @@
               <Partition DefId="C0">
                 <Condition>
                   <Expression>
-                    <Param><![CDATA["1294099"]]></Param>
+                    <Param><![CDATA["3697027"]]></Param>
                   </Expression>
-                  <ActionSet>
-                    <Action DefId="A3">
+                  <Partition DefId="C5">
+                    <Condition>
                       <Expression>
-                        <Param><![CDATA[2]]></Param>
+                        <Param><![CDATA[4/1/2020]]></Param>
+                        <Param><![CDATA[6/1/2021]]></Param>
                       </Expression>
-                    </Action>
-                    <Action DefId="A2">
-                      <Expression>
-                        <Param><![CDATA[999999]]></Param>
-                      </Expression>
-                    </Action>
-                    <Action DefId="A4">
-                      <Expression>
-                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
-                      </Expression>
-                    </Action>
-                    <Action DefId="A1">
-                      <Expression>
-                        <Param><![CDATA["CustSpec"]]></Param>
-                        <Param><![CDATA["TEST E2E0524 1 Per Day"]]></Param>
-                      </Expression>
-                    </Action>
-                    <Action DefId="A0">
-                      <Expression>
-                        <Param><![CDATA["PMOD2"]]></Param>
-                      </Expression>
-                    </Action>
-                  </ActionSet>
+                      <ActionSet>
+                        <Action DefId="A3">
+                          <Expression>
+                            <Param><![CDATA[5]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA[999,999]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A4">
+                          <Expression>
+                            <Param><![CDATA[003_PRIORITY]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["CustSpec"]]></Param>
+                            <Param><![CDATA["Limit 5 per week"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA["Regional Field Director"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
                 </Condition>
               </Partition>
             </Condition>
@@ -356,36 +258,44 @@
                   <Partition DefId="C0">
                     <Condition>
                       <Expression>
-                        <Param><![CDATA["3564812"]]></Param>
+                        <Param><![CDATA["3564838"]]></Param>
                       </Expression>
-                      <ActionSet>
-                        <Action DefId="A3">
+                      <Partition DefId="C5">
+                        <Condition>
                           <Expression>
-                            <Param><![CDATA[2]]></Param>
+                            <Param><![CDATA[4/1/2020]]></Param>
+                            <Param><![CDATA[6/1/2021]]></Param>
                           </Expression>
-                        </Action>
-                        <Action DefId="A2">
-                          <Expression>
-                            <Param><![CDATA[999999]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A4">
-                          <Expression>
-                            <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A1">
-                          <Expression>
-                            <Param><![CDATA["CustSpec"]]></Param>
-                            <Param><![CDATA["TEST E2E0524 1 Per Day"]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A0">
-                          <Expression>
-                            <Param><![CDATA["PMOD2"]]></Param>
-                          </Expression>
-                        </Action>
-                      </ActionSet>
+                          <ActionSet>
+                            <Action DefId="A3">
+                              <Expression>
+                                <Param><![CDATA[5]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[999,999]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA[003_PRIORITY]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["CustSpec"]]></Param>
+                                <Param><![CDATA["Limit 5 per week"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["Regional Field Director"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
                     </Condition>
                   </Partition>
                 </Condition>
@@ -398,46 +308,54 @@
           <Partition DefId="C11">
             <Condition>
               <Expression>
-                <Param><![CDATA["P018"]]></Param>
+                <Param><![CDATA["P003"]]></Param>
               </Expression>
               <Partition DefId="C12">
                 <Condition>
                   <Expression>
-                    <Param><![CDATA["2057217717"]]></Param>
+                    <Param><![CDATA["2057196519"]]></Param>
                   </Expression>
                   <Partition DefId="C0">
                     <Condition>
                       <Expression>
-                        <Param><![CDATA["3524691"]]></Param>
+                        <Param><![CDATA["4132288"]]></Param>
                       </Expression>
-                      <ActionSet>
-                        <Action DefId="A3">
+                      <Partition DefId="C5">
+                        <Condition>
                           <Expression>
-                            <Param><![CDATA[2]]></Param>
+                            <Param><![CDATA[4/1/2020]]></Param>
+                            <Param><![CDATA[6/1/2021]]></Param>
                           </Expression>
-                        </Action>
-                        <Action DefId="A2">
-                          <Expression>
-                            <Param><![CDATA[999999]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A4">
-                          <Expression>
-                            <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A1">
-                          <Expression>
-                            <Param><![CDATA["CustSpec"]]></Param>
-                            <Param><![CDATA["TEST E2E0524 1 Per Day"]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A0">
-                          <Expression>
-                            <Param><![CDATA["PMOD2"]]></Param>
-                          </Expression>
-                        </Action>
-                      </ActionSet>
+                          <ActionSet>
+                            <Action DefId="A3">
+                              <Expression>
+                                <Param><![CDATA[5]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[999,999]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA[003_PRIORITY]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["CustSpec"]]></Param>
+                                <Param><![CDATA["Limit 5 per week"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["Regional Field Director"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
                     </Condition>
                   </Partition>
                 </Condition>
@@ -455,41 +373,49 @@
               <Partition DefId="C12">
                 <Condition>
                   <Expression>
-                    <Param><![CDATA["2150133279"]]></Param>
+                    <Param><![CDATA["2150133283"]]></Param>
                   </Expression>
                   <Partition DefId="C0">
                     <Condition>
                       <Expression>
-                        <Param><![CDATA["4476099"]]></Param>
+                        <Param><![CDATA["5287768"]]></Param>
                       </Expression>
-                      <ActionSet>
-                        <Action DefId="A3">
+                      <Partition DefId="C5">
+                        <Condition>
                           <Expression>
-                            <Param><![CDATA[5]]></Param>
+                            <Param><![CDATA[4/1/2020]]></Param>
+                            <Param><![CDATA[6/1/2021]]></Param>
                           </Expression>
-                        </Action>
-                        <Action DefId="A2">
-                          <Expression>
-                            <Param><![CDATA[999999]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A4">
-                          <Expression>
-                            <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A1">
-                          <Expression>
-                            <Param><![CDATA["CustSpec"]]></Param>
-                            <Param><![CDATA["TEST E2E0524 1 Per Day"]]></Param>
-                          </Expression>
-                        </Action>
-                        <Action DefId="A0">
-                          <Expression>
-                            <Param><![CDATA["PMOD2"]]></Param>
-                          </Expression>
-                        </Action>
-                      </ActionSet>
+                          <ActionSet>
+                            <Action DefId="A3">
+                              <Expression>
+                                <Param><![CDATA[10]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A2">
+                              <Expression>
+                                <Param><![CDATA[999,999]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A4">
+                              <Expression>
+                                <Param><![CDATA[003_PRIORITY]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A1">
+                              <Expression>
+                                <Param><![CDATA["CustSpec"]]></Param>
+                                <Param><![CDATA["Limit 5 per week"]]></Param>
+                              </Expression>
+                            </Action>
+                            <Action DefId="A0">
+                              <Expression>
+                                <Param><![CDATA["Regional Field Director"]]></Param>
+                              </Expression>
+                            </Action>
+                          </ActionSet>
+                        </Condition>
+                      </Partition>
                     </Condition>
                   </Partition>
                 </Condition>
@@ -502,47 +428,46 @@
   </Body>
   <Resources DefaultLocale="en_US">
     <ResourceSet Locale="en_US">
-      <Data Name="/0/0/0/0/0/A#Height"><![CDATA[19]]></Data>
       <Data Name="Definitions(A0)#HeaderText"><![CDATA[Requestor]]></Data>
-      <Data Name="Definitions(A0)#Width"><![CDATA[31]]></Data>
+      <Data Name="Definitions(A0)#Width"><![CDATA[30]]></Data>
       <Data Name="Definitions(A1)#HeaderText"><![CDATA[Reason]]></Data>
-      <Data Name="Definitions(A1)#Width"><![CDATA[32]]></Data>
+      <Data Name="Definitions(A1)#Width"><![CDATA[31]]></Data>
       <Data Name="Definitions(A1)[0]#HeaderText"><![CDATA[Code]]></Data>
       <Data Name="Definitions(A1)[1]#HeaderText"><![CDATA[Description]]></Data>
       <Data Name="Definitions(A2)#HeaderText"><![CDATA[Set Allowed Quantity (Must stay 999999)]]></Data>
-      <Data Name="Definitions(A2)#Width"><![CDATA[36]]></Data>
-      <Data Name="Definitions(A3)#HeaderText"><![CDATA[Set Daily Limit (Number)]]></Data>
-      <Data Name="Definitions(A3)#Width"><![CDATA[35]]></Data>
+      <Data Name="Definitions(A2)#Width"><![CDATA[33]]></Data>
+      <Data Name="Definitions(A3)#HeaderText"><![CDATA[Set Weekly Limit (Number)]]></Data>
+      <Data Name="Definitions(A3)#Width"><![CDATA[37]]></Data>
       <Data Name="Definitions(A4)#HeaderText"><![CDATA[Priority]]></Data>
-      <Data Name="Definitions(A4)#Width"><![CDATA[33]]></Data>
+      <Data Name="Definitions(A4)#Width"><![CDATA[32]]></Data>
       <Data Name="Definitions(C0)#HeaderText"><![CDATA[Material]]></Data>
-      <Data Name="Definitions(C0)#Width"><![CDATA[77]]></Data>
+      <Data Name="Definitions(C0)#Width"><![CDATA[99]]></Data>
       <Data Name="Definitions(C1)#HeaderText"><![CDATA[GSN]]></Data>
-      <Data Name="Definitions(C1)#Width"><![CDATA[38]]></Data>
+      <Data Name="Definitions(C1)#Width"><![CDATA[39]]></Data>
       <Data Name="Definitions(C10)#HeaderText"><![CDATA[Class of Trade]]></Data>
-      <Data Name="Definitions(C10)#Width"><![CDATA[39]]></Data>
+      <Data Name="Definitions(C10)#Width"><![CDATA[40]]></Data>
       <Data Name="Definitions(C11)#HeaderText"><![CDATA[Plant]]></Data>
       <Data Name="Definitions(C11)#Width"><![CDATA[39]]></Data>
       <Data Name="Definitions(C12)#HeaderText"><![CDATA[Account Number ]]></Data>
-      <Data Name="Definitions(C12)#Width"><![CDATA[184]]></Data>
+      <Data Name="Definitions(C12)#Width"><![CDATA[125]]></Data>
       <Data Name="Definitions(C2)#HeaderText"><![CDATA[GSN+Packaging Key]]></Data>
-      <Data Name="Definitions(C2)#Width"><![CDATA[37]]></Data>
+      <Data Name="Definitions(C2)#Width"><![CDATA[38]]></Data>
       <Data Name="Definitions(C3)#HeaderText"><![CDATA[Customer Type]]></Data>
       <Data Name="Definitions(C3)#Width"><![CDATA[37]]></Data>
       <Data Name="Definitions(C4)#HeaderText"><![CDATA[Sub Class of Trade]]></Data>
-      <Data Name="Definitions(C4)#Width"><![CDATA[38]]></Data>
+      <Data Name="Definitions(C4)#Width"><![CDATA[39]]></Data>
       <Data Name="Definitions(C5)#HeaderText"><![CDATA[Transaction Date]]></Data>
-      <Data Name="Definitions(C5)#Width"><![CDATA[37]]></Data>
+      <Data Name="Definitions(C5)#Width"><![CDATA[70]]></Data>
       <Data Name="Definitions(C5)[0]#HeaderText"><![CDATA[Start Date]]></Data>
       <Data Name="Definitions(C5)[1]#HeaderText"><![CDATA[End Date]]></Data>
       <Data Name="Definitions(C6)#HeaderText"><![CDATA[Customer Speciality]]></Data>
-      <Data Name="Definitions(C6)#Width"><![CDATA[39]]></Data>
+      <Data Name="Definitions(C6)#Width"><![CDATA[40]]></Data>
       <Data Name="Definitions(C7)#HeaderText"><![CDATA[Affiliation 3]]></Data>
-      <Data Name="Definitions(C7)#Width"><![CDATA[38]]></Data>
+      <Data Name="Definitions(C7)#Width"><![CDATA[39]]></Data>
       <Data Name="Definitions(C8)#HeaderText"><![CDATA[Affiliation 2]]></Data>
-      <Data Name="Definitions(C8)#Width"><![CDATA[39]]></Data>
+      <Data Name="Definitions(C8)#Width"><![CDATA[40]]></Data>
       <Data Name="Definitions(C9)#HeaderText"><![CDATA[Affiliation 1]]></Data>
-      <Data Name="Definitions(C9)#Width"><![CDATA[38]]></Data>
+      <Data Name="Definitions(C9)#Width"><![CDATA[39]]></Data>
     </ResourceSet>
   </Resources>
 </DT></definition>
