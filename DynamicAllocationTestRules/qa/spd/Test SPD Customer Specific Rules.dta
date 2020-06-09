@@ -1,0 +1,677 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ilog.rules.studio.model.dt:DecisionTable xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ilog.rules.studio.model.dt="http://ilog.rules.studio/model/dt.ecore">
+  <name>Test SPD Customer Specific Rules</name>
+  <uuid>4dd754cc-5146-4f57-b661-978605ab8103</uuid>
+  <priority>6</priority>
+  <locale>en_US</locale>
+  <definition>
+<DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
+    <Body>
+                <Properties>
+                    <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
+                    <Property Name="Check.Gap" Type="xs:boolean"><![CDATA[false]]></Property>
+                    <Property Name="Lock.ApplyLocking" Type="xs:boolean"><![CDATA[true]]></Property>
+                    <Property Name="RowOrdering"><![CDATA[Automatic]]></Property>
+                </Properties>
+                <Structure>
+                    <ConditionDefinitions>
+                        <ConditionDefinition Id="C10">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the class of trade of the customer is <an object>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C6">
+                            <Properties>
+                                <Property Name="Lock.EditCondExpr" Type="xs:boolean"><![CDATA[false]]></Property>
+                                <Property Name="Lock.EditPartitions" Type="xs:boolean"><![CDATA[false]]></Property>
+                                <Property Name="Lock.EditPartitionValues" Type="xs:boolean"><![CDATA[false]]></Property>
+                            </Properties>
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the sub class of trade of the customer is <an object>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C4">
+                            <Properties>
+                                <Property Name="Lock.EditCondExpr" Type="xs:boolean"><![CDATA[false]]></Property>
+                                <Property Name="Lock.EditPartitions" Type="xs:boolean"><![CDATA[false]]></Property>
+                                <Property Name="Lock.EditPartitionValues" Type="xs:boolean"><![CDATA[false]]></Property>
+                            </Properties>
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the customer specialty of the customer is <an object>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C9">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the first affiliation code of the customer is <a string>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C8">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the second affiliation code of the customer is <a string>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C7">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the third affiliation code of the customer is <a string>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C11">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the plant of the order line item  is <a string>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C12">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the account number of the customer  is <a string>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C0">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the material of the order line item contains <a string>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C1">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the GSN of the order line item is <a string>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C2">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the GSN + packaging key of the order line item is <a string>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C3">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[the customer type of the order line item is <a customer type>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                        <ConditionDefinition Id="C5">
+                            <ExpressionDefinition>
+                                <Text><![CDATA['Transaction Date' is on or after <a simple date>  and on or before <a simple date>]]></Text>
+                            </ExpressionDefinition>
+                        </ConditionDefinition>
+                    </ConditionDefinitions>
+                    <ActionDefinitions>
+                        <ActionDefinition Id="A6">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[set the allowed quantity of the order line item to <a number> ]]></Text>
+                            </ExpressionDefinition>
+                        </ActionDefinition>
+                        <ActionDefinition Id="A5">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[set the priority of the order line item for this rule to <a com.cardinal.brms.dynamicallocation.dynamicdomain.Priority>]]></Text>
+                                <PlaceHolder Position="0">
+                                    <DefaultValue><![CDATA[999999_LOW]]></DefaultValue>
+                                </PlaceHolder>
+                            </ExpressionDefinition>
+                        </ActionDefinition>
+                        <ActionDefinition Id="A1">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[add reason code <a string> with description <a string> to the order line item]]></Text>
+                            </ExpressionDefinition>
+                        </ActionDefinition>
+                        <ActionDefinition Id="A0">
+                            <ExpressionDefinition>
+                                <Text><![CDATA[do nothing <a string>]]></Text>
+                            </ExpressionDefinition>
+                        </ActionDefinition>
+                    </ActionDefinitions>
+                </Structure>
+                <Contents>
+                    <Partition DefId="C10">
+                        <Condition>
+                            <Expression/>
+                            <Partition DefId="C12">
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA["2057180000"]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C0">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["1007947"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[56]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["1453216"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[45]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["5539176"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[34]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA["2057183348 "]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C0">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["1003680"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[56]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["1453158"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[45]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["4795076"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[34]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA["2057187171"]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C0">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["4340279"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[11]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["4480299"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[22]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA["2057192267"]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C0">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["4281473"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[77]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["4385217"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[66]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA["2057192945"]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C0">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["3998705"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[22]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["4209474"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[56]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                                <Condition>
+                                    <Expression>
+                                        <Param><![CDATA["2057199712"]]></Param>
+                                    </Expression>
+                                    <Partition DefId="C0">
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["3001435"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[44]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression>
+                                                <Param><![CDATA["3713609"]]></Param>
+                                            </Expression>
+                                            <ActionSet>
+                                                <Action DefId="A6">
+                                                    <Expression>
+                                                        <Param><![CDATA[67]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A5">
+                                                    <Expression>
+                                                        <Param><![CDATA[001_OVERRIDE_ALL]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A1">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                        <Param><![CDATA["PMOD Testing limit"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                                <Action DefId="A0">
+                                                    <Expression>
+                                                        <Param><![CDATA["PMOD Testing"]]></Param>
+                                                    </Expression>
+                                                </Action>
+                                            </ActionSet>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                                <Condition>
+                                    <Expression/>
+                                    <Partition DefId="C5">
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                        <Condition>
+                                            <Expression/>
+                                            <ActionSet/>
+                                        </Condition>
+                                    </Partition>
+                                </Condition>
+                            </Partition>
+                        </Condition>
+                    </Partition>
+                </Contents>
+            </Body>
+    <Resources DefaultLocale="en_US">
+                <ResourceSet Locale="en_US">
+                    <Data Name="Definitions(A1)[1]#HeaderText"><![CDATA[Description]]></Data>
+                    <Data Name="Definitions(A1)[0]#HeaderText"><![CDATA[Code]]></Data>
+                    <Data Name="Definitions(C9)#Width"><![CDATA[51]]></Data>
+                    <Data Name="Definitions(C8)#Width"><![CDATA[51]]></Data>
+                    <Data Name="Definitions(C6)#Width"><![CDATA[71]]></Data>
+                    <Data Name="Definitions(C7)#Width"><![CDATA[51]]></Data>
+                    <Data Name="Definitions(C0)#HeaderText"><![CDATA[Material]]></Data>
+                    <Data Name="Definitions(C1)#HeaderText"><![CDATA[GSN]]></Data>
+                    <Data Name="Definitions(C5)[1]#HeaderText"><![CDATA[End Date]]></Data>
+                    <Data Name="Definitions(C5)[0]#HeaderText"><![CDATA[Start Date]]></Data>
+                    <Data Name="Definitions(C6)#HeaderText"><![CDATA[Sub Class of Trade]]></Data>
+                    <Data Name="Definitions(C7)#HeaderText"><![CDATA[Affiliation 3]]></Data>
+                    <Data Name="Definitions(A6)#HeaderText"><![CDATA[Allowed Quantity]]></Data>
+                    <Data Name="Definitions(C4)#HeaderText"><![CDATA[Customer Speciality]]></Data>
+                    <Data Name="Definitions(C9)#HeaderText"><![CDATA[Affiliation 1]]></Data>
+                    <Data Name="Definitions(C8)#HeaderText"><![CDATA[Affiliation 2]]></Data>
+                    <Data Name="Definitions(C5)#HeaderText"><![CDATA[Transaction Date]]></Data>
+                    <Data Name="Definitions(A1)#Width"><![CDATA[100]]></Data>
+                    <Data Name="Definitions(A0)#Width"><![CDATA[48]]></Data>
+                    <Data Name="Definitions(A5)#Width"><![CDATA[37]]></Data>
+                    <Data Name="Definitions(C11)#HeaderText"><![CDATA[Plant]]></Data>
+                    <Data Name="Definitions(C3)#Width"><![CDATA[48]]></Data>
+                    <Data Name="Definitions(C2)#HeaderText"><![CDATA[GSN+Packaging Key]]></Data>
+                    <Data Name="Definitions(C3)#HeaderText"><![CDATA[Customer Type]]></Data>
+                    <Data Name="Definitions(C10)#HeaderText"><![CDATA[Class of Trade]]></Data>
+                    <Data Name="Definitions(A0)#HeaderText"><![CDATA[Requestor]]></Data>
+                    <Data Name="Definitions(C1)#Width"><![CDATA[38]]></Data>
+                    <Data Name="Definitions(C4)#Width"><![CDATA[75]]></Data>
+                    <Data Name="Definitions(C5)#Width"><![CDATA[91]]></Data>
+                    <Data Name="Definitions(C0)#Width"><![CDATA[163]]></Data>
+                    <Data Name="Definitions(C2)#Width"><![CDATA[65]]></Data>
+                    <Data Name="Definitions(A1)#HeaderText"><![CDATA[Reason]]></Data>
+                    <Data Name="Definitions(A6)#Width"><![CDATA[118]]></Data>
+                    <Data Name="Definitions(C12)#HeaderText"><![CDATA[Account Number ]]></Data>
+                    <Data Name="Definitions(C10)#Width"><![CDATA[56]]></Data>
+                    <Data Name="Definitions(C11)#Width"><![CDATA[40]]></Data>
+                    <Data Name="Definitions(C12)#Width"><![CDATA[140]]></Data>
+                    <Data Name="Definitions(A5)#HeaderText"><![CDATA[Priority]]></Data>
+                </ResourceSet>
+            </Resources>
+</DT></definition>
+  <status>deployed</status>
+</ilog.rules.studio.model.dt:DecisionTable>
