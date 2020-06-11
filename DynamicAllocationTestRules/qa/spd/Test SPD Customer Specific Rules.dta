@@ -3,9 +3,9 @@
   <name>Test SPD Customer Specific Rules</name>
   <uuid>4dd754cc-5146-4f57-b661-978605ab8103</uuid>
   <priority>6</priority>
+  <status>deployed</status>
   <locale>en_US</locale>
-  <definition>
-<DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
+  <definition><DT xmlns="http://schemas.ilog.com/Rules/7.0/DecisionTable">
     <Body>
                 <Properties>
                     <Property Name="UI.MediaType"><![CDATA[Web]]></Property>
@@ -215,7 +215,7 @@
                                 </Condition>
                                 <Condition>
                                     <Expression>
-                                        <Param><![CDATA["2057183348 "]]></Param>
+                                        <Param><![CDATA["2057183348"]]></Param>
                                     </Expression>
                                     <Partition DefId="C0">
                                         <Condition>
@@ -673,5 +673,4 @@
                 </ResourceSet>
             </Resources>
 </DT></definition>
-  <status>deployed</status>
 </ilog.rules.studio.model.dt:DecisionTable>
