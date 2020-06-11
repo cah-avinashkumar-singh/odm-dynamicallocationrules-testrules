@@ -825,7 +825,7 @@
                     <Condition>
                       <Expression>
                         <Text><![CDATA[<an object> is one of <objects>]]></Text>
-                        <Param><![CDATA[{ "1316173" , "3537032" }]]></Param>
+                        <Param><![CDATA[{ "1316173" , "3537032" , "3537586" }]]></Param>
                       </Expression>
                       <ActionSet>
                         <Action DefId="A3">
