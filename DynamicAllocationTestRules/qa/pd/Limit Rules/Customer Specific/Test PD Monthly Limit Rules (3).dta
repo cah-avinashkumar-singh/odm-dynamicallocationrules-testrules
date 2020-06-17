@@ -254,24 +254,51 @@
           <Expression/>
           <Partition DefId="C6">
             <Condition>
-              <Expression/>
-              <ActionSet>
-                <Action DefId="A0">
-                  <Expression/>
-                </Action>
-                <Action DefId="A4">
-                  <Expression/>
-                </Action>
-                <Action DefId="A3">
-                  <Expression/>
-                </Action>
-                <Action DefId="A2">
-                  <Expression/>
-                </Action>
-                <Action DefId="A1">
-                  <Expression/>
-                </Action>
-              </ActionSet>
+              <Expression>
+                <Param><![CDATA["P032"]]></Param>
+              </Expression>
+              <Partition DefId="C7">
+                <Condition>
+                  <Expression>
+                    <Param><![CDATA["2150133279"]]></Param>
+                  </Expression>
+                  <Partition DefId="C8">
+                    <Condition>
+                      <Expression>
+                        <Param><![CDATA["4055422"]]></Param>
+                      </Expression>
+                      <ActionSet>
+                        <Action DefId="A0">
+                          <Expression>
+                            <Param><![CDATA[5]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A4">
+                          <Expression>
+                            <Param><![CDATA[999999]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A3">
+                          <Expression>
+                            <Param><![CDATA[003_PRIORITY]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A2">
+                          <Expression>
+                            <Param><![CDATA["CustSpec"]]></Param>
+                            <Param><![CDATA["Limit 5 per month"]]></Param>
+                          </Expression>
+                        </Action>
+                        <Action DefId="A1">
+                          <Expression>
+                            <Param><![CDATA["PMOD2"]]></Param>
+                          </Expression>
+                        </Action>
+                      </ActionSet>
+                    </Condition>
+                  </Partition>
+                </Condition>
+              </Partition>
             </Condition>
           </Partition>
         </Condition>
